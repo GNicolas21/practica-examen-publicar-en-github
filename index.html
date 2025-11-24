@@ -4,12 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Mi experimento CSS + Git</title>
+    
     <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: #5e3737;
+      }
+
+      .mascota {
+        position: fixed;
+        font-size: 60px;
+        font-family: monospace;
+        pointer-events: none; 
+        transform: translate(-50%, -50%);
+        transition: left 0.08s linear, top 0.08s linear;
+        z-index: 9999;
+      }
+
       h1 {
-	font-size: 64px;
+        font-size: 64px;
         color: white;
         background-color: salmon;
         border: 1px solid black;
+        padding: 10px;
       }
 
       p {
@@ -17,16 +35,35 @@
         background-color: rgb(150, 44, 248);
         border: 3px black solid;
         font-size: medium;
+        padding: 8px;
+      }
+
+      h2 {
+        color: white;
+        margin-left: 10px;
       }
     </style>
   </head>
+
   <body>
     <h1>HOLA Git XD !</h1>
     <p>Este es mi primer ej. con CSS y Git</p>
 
+    <!-- 👇 Mascota que sigue al ratón 👇 -->
+    <div class="mascota">🤖</div>
+
     <h2>Subtítulo</h2>
-    <p>Segundo elemento de parrafo</p>
+    <p>Segundo elemento de párrafo</p>
     <h1>¡HALA MADRID!</h1>
-    <footer>Este es el pie de página ~ Año 2025 </footer>
+
+    <script>
+      const pet = document.querySelector('.mascota');
+
+      document.addEventListener('mousemove', (e) => {
+        pet.style.left = e.clientX + 'px';
+        pet.style.top = e.clientY + 'px';
+      });
+    </script>
   </body>
-</html>
+</
+
